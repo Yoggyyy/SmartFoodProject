@@ -7,5 +7,11 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   vite: {
     plugins: [tailwindcss()]
+  },
+  publicDir: 'public',
+  srcDir: 'src',
+  outDir: 'dist',
+  build: {
+    assets: '_assets'
   }
 });

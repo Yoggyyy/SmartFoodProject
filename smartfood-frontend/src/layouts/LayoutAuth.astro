@@ -9,15 +9,30 @@ import "../styles/global.css";
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SmartFood - Auth</title>
   </head>
-  <body>
+  <body class="overflow-x-hidden">
     <main
-      class="grid grid-cols-[1.5fr_1fr] grid-rows-1 bg-amber-700 w-screen h-screen"
+      class="grid grid-cols-[1.5fr_1fr] grid-rows-1 bg-amber-50 h-screen overflow-hidden"
     >
-      <img src="../../public/background.webp" alt="" />
-      <section class="flex flex-col gap-4 items-center">
-        <div>
-          <div>
-            <h1 class="text-2xl font-bold">SmartFood</h1>
+      <!-- Parte izquierda del contenido -->
+      <div
+        class="flex flex-col pl-[73px] pt-[49px] pb-[49px] h-full overflow-hidden"
+      >
+        <img
+          class="w-full h-full object-cover"
+          src="../../public/background.webp"
+          alt=""
+        />
+      </div>
+
+      <!-- Parte derecha del contenido -->
+      <!--Formulario -->
+      <section
+        class="flex flex-col gap-4 items-center px-[64px] py[64px] justify-center"
+      >
+        <!-- Arriba -->
+        <div class="flex flex-col gap-4 px-[96px]">
+          <div class="justify-center">
+            <h1 class="text-2xl ">SmartFood</h1>
             <h2>Te facilitamos las listas de la compra</h2>
           </div>
 
@@ -26,6 +41,11 @@ import "../styles/global.css";
             <button>Github</button>
           </div>
         </div>
+
+        <!-- Centro -->
+        <div></div>
+
+        <!-- Abajo -->
         <div></div>
       </section>
     </main>
