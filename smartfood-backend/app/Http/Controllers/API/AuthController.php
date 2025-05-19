@@ -12,10 +12,10 @@ class AuthController extends Controller
     public function register(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'nombre' => 'required|string|max:255',
-            'apellidos' => 'required|string|max:255',
+            'name' => 'required|string|max:255',
+            'surname' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
-            'alergenos' => 'nullable|string',
+            'allergens' => 'nullable|string',
             'password' => 'required|string|min:8|confirmed', // 'confirmed' busca un campo password_confirmation
         ]);
 
@@ -24,10 +24,10 @@ class AuthController extends Controller
         }
 
         $user = User::create([
-            'nombre' => $request->nombre,
-            'apellidos' => $request->apellidos,
+            'name' => $request->name,
+            'surname' => $request->surname,
             'email' => $request->email,
-            'alergenos' => $request->alergenos,
+            'allergens' => $request->allergens,
             'password' => Hash::make($request->password),
         ]);
 
