@@ -3,6 +3,59 @@ import LayoutAuth from "../../layouts/LayoutAuth.astro";
 
 ---
 
-<LayoutAuth>
-    <h1>Registro</h1>
+<LayoutAuth 
+  title="SmartFood" 
+  subtitle="La nueva forma de preparar tus listas de la compra "
+>
+  <div slot="social-buttons" class="flex gap-4 w-full mt-4">
+    <button
+      type="button"
+      class="flex-1 bg-gray-900 text-white font-semibold rounded-md py-3 text-lg hover:bg-gray-800 transition"
+    >
+      Google
+    </button>
+    <button
+      type="button"
+      class="flex-1 bg-gray-900 text-white font-semibold rounded-md py-3 text-lg hover:bg-gray-800 transition"
+    >
+      Github
+    </button>
+  </div>
+
+  <form slot="form" method="post" class="flex flex-col gap-4 w-full">
+    <!-- Fila Nombre y Apellidos -->
+    <div class="flex gap-4">
+      <div class="flex flex-col w-1/2">
+        <label for="name" class="mb-1 text-sm">Nombre</label>
+        <input type="text" name="name" id="name" class="bg-gray-500 text-white rounded-md px-4 py-2 focus:outline-none" />
+      </div>
+      <div class="flex flex-col w-1/2">
+        <label for="surname" class="mb-1 text-sm">Apellidos</label>
+        <input type="text" name="surname" id="surname" class="bg-gray-500 text-white rounded-md px-4 py-2 focus:outline-none" />
+      </div>
+    </div>
+    <!-- Alérgenos -->
+    <div class="flex flex-col">
+      <label for="allergens" class="mb-1 text-sm">Alérgenos</label>
+      <input type="text" name="allergens" id="allergens" class="bg-gray-500 text-white rounded-md px-4 py-2 focus:outline-none" />
+    </div>
+    <!-- Email -->
+    <div class="flex flex-col">
+      <label for="email" class="mb-1 text-sm">Email</label>
+      <input type="email" name="email" id="email" class="bg-gray-500 text-white rounded-md px-4 py-2 focus:outline-none" />
+    </div>
+    <!-- Contraseña -->
+    <div class="flex flex-col">
+      <label for="password" class="mb-1 text-sm">Contraseña</label>
+      <input type="password" name="password" id="password" class="bg-gray-500 text-white rounded-md px-4 py-2 focus:outline-none" />
+    </div>
+    <!-- Botón -->
+    <button type="submit" class="mt-4 bg-green-200 text-black font-bold rounded-md py-3 text-lg hover:bg-green-300 transition">
+      Registrarse
+    </button>
+    <!-- Enlace a Login -->
+    <p class="text-center mt-4 text-sm">
+      ¿Ya tienes cuenta? <a href="/auth/login" class="text-green-600 hover:text-green-700 font-medium">Inicia Sesión</a>
+    </p>
+  </form>
 </LayoutAuth>

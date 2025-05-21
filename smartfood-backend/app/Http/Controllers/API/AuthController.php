@@ -23,7 +23,7 @@ class AuthController extends Controller
             return response()->json($validator->errors(), 422);
         }
 
-        $user = User::create([
+        $user = User::create( [
             'name' => $request->name,
             'surname' => $request->surname,
             'email' => $request->email,

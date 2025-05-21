@@ -1,0 +1,40 @@
+---
+import LayoutAuth from "../../layouts/LayoutAuth.astro";
+---
+
+<LayoutAuth 
+  title="SmartFood" 
+  subtitle="Bienvenido de nuevo a SmartFood"
+>
+  <div slot="social-buttons" class="flex gap-4 w-full mt-4">
+    <button
+      type="button"
+      class="flex-1 bg-gray-900 text-white font-semibold rounded-md py-3 text-lg hover:bg-gray-800 transition"
+    >
+      Google
+    </button>
+    <button
+      type="button"
+      class="flex-1 bg-gray-900 text-white font-semibold rounded-md py-3 text-lg hover:bg-gray-800 transition"
+    >
+      Github
+    </button>
+  </div>
+
+  <form slot="form" method="post" class="flex flex-col gap-4 w-full">
+    <!-- Email -->
+    <div class="flex flex-col">
+      <label for="email" class="mb-1 text-sm">Email</label>
+      <input type="email" name="email" id="email" class="bg-gray-500 text-white rounded-md px-4 py-2 focus:outline-none" />
+    </div>
+    <!-- Contraseña -->
+    <div class="flex flex-col">
+      <label for="password" class="mb-1 text-sm">Contraseña</label>
+      <input type="password" name="password" id="password" class="bg-gray-500 text-white rounded-md px-4 py-2 focus:outline-none" />
+    </div>
+    <!-- Botón -->
+    <button type="submit" class="mt-4 bg-green-200 text-black font-bold rounded-md py-3 text-lg hover:bg-green-300 transition">
+      Iniciar Sesión
+    </button>
+  </form>
+</LayoutAuth>
