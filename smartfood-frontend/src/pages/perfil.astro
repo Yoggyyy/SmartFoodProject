@@ -1,0 +1,117 @@
+---
+import "../styles/global.css";
+---
+
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Perfil de usuario - SmartFood</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body class="font-[onest] bg-green-50 h-screen">
+    <main class="flex min-h-screen">
+      <!-- Sidebar -->
+      <aside class="w-1/5 bg-green-100 flex flex-col justify-between py-4 h-auto">
+        <div>
+          <!-- Logo -->
+          <div class="flex items-center gap-2 px-6 mb-6">
+            <img src="/LogoSmartFood.webp" alt="Logo SmartFood" class="h-10 w-auto" />
+          </div>
+          <!-- Perfil usuario -->
+          <a href="/perfil" class="flex items-center gap-3 px-6 py-2 mb-4 hover:bg-green-200 rounded-md transition cursor-pointer bg-green-200">
+            <div class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center">
+              <img src="" alt="Avatar" class="w-10 h-10 rounded-full object-cover" />
+            </div>
+            <span class="text-gray-700">Perfil</span>
+          </a>
+          <!-- Menú lateral -->
+          <nav class="flex flex-col gap-1 px-2">
+            <a href="/chat" class="flex items-center gap-2 px-4 py-2 rounded-md hover:bg-green-200 text-green-900 transition">
+              <span class="text-lg">💬</span> Chat
+            </a>
+            <a href="/configuracion" class="flex items-center gap-2 px-4 py-2 rounded-md hover:bg-green-200 text-green-900 transition">
+              <span class="text-lg">⚙️</span> Configuración
+            </a>
+          </nav>
+        </div>
+        <!-- Opciones inferiores -->
+        <div class="flex flex-col gap-2 px-6">
+          <a href="/configuracion" class="flex items-center gap-2 text-gray-700 hover:text-green-800 hover:bg-green-200 rounded-md px-2 py-2 transition">
+            <span class="text-lg">⚙️</span> Configuración
+          </a>
+          <button class="flex items-center gap-2 text-gray-700 hover:text-green-800 transition">
+            <span class="text-lg">↩️</span> Cerrar sesión
+          </button>
+        </div>
+      </aside>
+      <!-- Contenido principal -->
+      <section class="flex-1 flex flex-col">
+        <!-- Header -->
+        <header class="flex items-center justify-between p-4 border-b bg-white">
+          <div class="flex items-center gap-2">
+            <img src="/LogoSmartFood.webp" alt="Logo SmartFood" class="h-10 w-auto" />
+          </div>
+          <span class="text-sm text-gray-600">Te facilitamos las listas de la compra</span>
+        </header>
+        <!-- Perfil -->
+        <div class="flex-1 flex flex-col items-center justify-center p-8 bg-green-50">
+          <div class="bg-white rounded-2xl shadow-lg p-8 w-full max-w-md flex flex-col gap-6">
+            <h2 class="text-2xl font-bold text-center text-green-900 mb-4">Perfil de usuario</h2>
+            <div class="flex flex-col gap-2 items-center">
+              <label class="text-sm text-gray-600 w-full flex flex-col items-center cursor-pointer">
+                Foto de perfil
+                <img src="/logoManzana.webp" alt="Avatar" class="w-20 h-20 rounded-full object-cover border-2 border-green-200 mb-2 mt-1" />
+                <input type="file" class="hidden" />
+              </label>
+            </div>
+            <div class="flex flex-col gap-2">
+              <label class="text-sm text-gray-600">Nombre</label>
+              <input type="text" value="Nombre de ejemplo" readonly class="bg-gray-100 rounded-md px-4 py-2 text-gray-800" />
+            </div>
+            <div class="flex flex-col gap-2">
+              <label class="text-sm text-gray-600">Apellidos</label>
+              <input type="text" value="Apellidos de ejemplo" readonly class="bg-gray-100 rounded-md px-4 py-2 text-gray-800" />
+            </div>
+            <div class="flex flex-col gap-2">
+              <label class="text-sm text-gray-600">Correo electrónico</label>
+              <input type="email" value="usuario@ejemplo.com" readonly class="bg-gray-100 rounded-md px-4 py-2 text-gray-800" />
+            </div>
+            <div class="flex flex-col gap-2">
+              <label class="text-sm text-gray-600">Alérgenos</label>
+              <input type="text" value="Ninguno" readonly class="bg-gray-100 rounded-md px-4 py-2 text-gray-800" />
+            </div>
+            <div class="flex flex-col gap-2">
+              <label class="text-sm text-gray-600">Supermercado de preferencia</label>
+              <select class="bg-gray-100 rounded-md px-4 py-2 text-gray-800" value="">
+                <option value="" selected>Selecciona un supermercado</option>
+                <option value="mercadona">Mercadona</option>
+                <option value="carrefour">Carrefour</option>
+              </select>
+            </div>
+            <button class="mt-4 bg-green-200 hover:bg-green-300 text-green-900 font-bold rounded-md py-3 text-lg transition">Editar perfil</button>
+            <!-- Feedback visual tras editar -->
+            <div class="hidden mt-2 text-green-700 text-center font-semibold" id="feedback-success">
+              ¡Perfil actualizado correctamente!
+            </div>
+            <!-- Cambiar contraseña -->
+            <details class="mt-6">
+              <summary class="cursor-pointer text-green-700 font-semibold mb-2">¿Quieres cambiar tu contraseña?</summary>
+              <form class="flex flex-col gap-2 mt-2">
+                <label class="text-sm text-gray-600">Contraseña actual</label>
+                <input type="password" class="bg-gray-100 rounded-md px-4 py-2 text-gray-800" />
+                <label class="text-sm text-gray-600">Nueva contraseña</label>
+                <input type="password" class="bg-gray-100 rounded-md px-4 py-2 text-gray-800" />
+                <label class="text-sm text-gray-600">Repite la nueva contraseña</label>
+                <input type="password" class="bg-gray-100 rounded-md px-4 py-2 text-gray-800" />
+                <button type="submit" class="mt-2 bg-green-200 hover:bg-green-300 text-green-900 font-bold rounded-md py-2 text-md transition">Actualizar contraseña</button>
+                <div class="hidden mt-2 text-green-700 text-center font-semibold" id="feedback-password">
+                  ¡Contraseña cambiada correctamente!
+                </div>
+              </form>
+            </details>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html> 

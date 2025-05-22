@@ -1,0 +1,120 @@
+---
+import "../styles/global.css";
+---
+
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>SmartFood - Chat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body class="font-[onest] bg-green-50 h-screen">
+    <main class="flex h-screen">
+      <!-- Sidebar -->
+      <aside class="w-1/5 bg-green-100 flex flex-col justify-between py-4">
+        <div>
+          <!-- Logo -->
+          <div class="flex items-center gap-2 px-6 mb-6">
+            <img src="/LogoSmartFood.webp" alt="Logo SmartFood" class="h-10 w-auto" />
+          </div>
+          <!-- Perfil usuario -->
+          <a href="/perfil" class="flex items-center gap-3 px-6 py-2 mb-4 hover:bg-green-200 rounded-md transition cursor-pointer">
+            <div class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center">
+              <img src="" alt="Avatar" class="w-10 h-10 rounded-full object-cover" />
+            </div>
+            <span class="text-gray-700">Perfil</span>
+          </a>
+          <!-- Menú lateral -->
+          <nav class="flex flex-col gap-1 px-2">
+            <button class="flex items-center gap-2 px-4 py-2 rounded-md bg-green-700 text-white font-semibold mb-1">
+              <span class="text-xl">+</span> Nueva lista
+            </button>
+            <button class="flex items-center gap-2 px-4 py-2 rounded-md hover:bg-green-200 text-green-900 transition">
+              <span class="text-lg">💬</span> Lista semanal
+            </button>
+            <button class="flex items-center gap-2 px-4 py-2 rounded-md hover:bg-green-200 text-green-900 transition">
+              <span class="text-lg">💬</span> Compra para la cena
+            </button>
+            <button class="flex items-center gap-2 px-4 py-2 rounded-md hover:bg-green-200 text-green-900 transition">
+              <span class="text-lg">💬</span> Productos sin gluten
+            </button>
+          </nav>
+        </div>
+        <!-- Opciones inferiores -->
+        <div class="flex flex-col gap-2 px-6">
+          <a href="/configuracion" class="flex items-center gap-2 text-gray-700 hover:text-green-800 hover:bg-green-200 rounded-md px-2 py-2 transition">
+            <span class="text-lg">⚙️</span> Configuración
+          </a>
+          <button class="flex items-center gap-2 text-gray-700 hover:text-green-800 transition">
+            <span class="text-lg">↩️</span> Cerrar sesión
+          </button>
+        </div>
+      </aside>
+      <!-- Contenido principal -->
+      <section class="flex-1 flex flex-col">
+        <!-- Header -->
+        <header class="flex items-center justify-between p-4 border-b bg-white">
+          <div class="flex items-center gap-2">
+            <img src="/LogoSmartFood.webp" alt="Logo SmartFood" class="h-10 w-auto" />
+          </div>
+          <span class="text-sm text-gray-600">Te facilitamos las listas de la compra</span>
+        </header>
+        <!-- Chat principal -->
+        <div class="flex-1 p-8 overflow-y-auto flex flex-col gap-6 justify-center bg-green-50">
+          <!-- Mensaje 1 -->
+          <div class="flex flex-col items-start gap-1">
+            <div class="flex items-start gap-3">
+              <img src="/logoManzana.webp" alt="Bot" class="h-8 w-8 rounded-full" />
+              <div class="bg-white rounded-lg p-4 shadow text-gray-800 max-w-xl" id="msg-bot-1">
+                ¡Hola! Soy SmartFood, tu asistente para crear listas de compra. ¿En qué puedo ayudarte hoy?
+              </div>
+            </div>
+            <button class="flex items-center gap-1 text-green-700 hover:text-green-900 text-xs ml-11" onclick="navigator.clipboard.writeText(document.getElementById('msg-bot-1').innerText)">
+              <svg xmlns='http://www.w3.org/2000/svg' class='h-4 w-4' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M8 16h8M8 12h8m-8-4h8M4 6h16M4 10h16M4 14h16M4 18h16' /></svg>
+              Copiar
+            </button>
+          </div>
+          <!-- Mensaje 2 -->
+          <div class="flex flex-col items-start gap-1">
+            <div class="flex items-start gap-3">
+              <img src="/logoManzana.webp" alt="Bot" class="h-8 w-8 rounded-full" />
+              <div class="bg-white rounded-lg p-4 shadow text-gray-800 max-w-xl" id="msg-bot-2">
+                Estoy aquí para ayudarte con tus listas de compra. Puedes pedirme que cree una lista, que te sugiera productos o que te ayude a organizar tu compra según tu presupuesto y supermercado preferido.
+              </div>
+            </div>
+            <button class="flex items-center gap-1 text-green-700 hover:text-green-900 text-xs ml-11" onclick="navigator.clipboard.writeText(document.getElementById('msg-bot-2').innerText)">
+              <svg xmlns='http://www.w3.org/2000/svg' class='h-4 w-4' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M8 16h8M8 12h8m-8-4h8M4 6h16M4 10h16M4 14h16M4 18h16' /></svg>
+              Copiar
+            </button>
+          </div>
+          <!-- Mensaje de usuario de ejemplo -->
+          <div class="flex flex-col items-end gap-1">
+            <div class="flex items-start gap-3 justify-end w-full">
+              <div class="bg-green-700 text-white rounded-lg p-4 shadow max-w-xl ml-auto" id="msg-user-1">
+                sdfdsdf
+              </div>
+            </div>
+            <button class="flex items-center gap-1 text-green-700 hover:text-green-900 text-xs mr-2" onclick="navigator.clipboard.writeText(document.getElementById('msg-user-1').innerText)">
+              <svg xmlns='http://www.w3.org/2000/svg' class='h-4 w-4' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M8 16h8M8 12h8m-8-4h8M4 6h16M4 10h16M4 14h16M4 18h16' /></svg>
+              Copiar
+            </button>
+          </div>
+        </div>
+        <!-- Input de mensaje -->
+        <footer class="p-4 border-t bg-white">
+          <form class="flex flex-col gap-2">
+            <div class="flex gap-2">
+              <input type="text" placeholder="Escribe tu mensaje aquí..." class="flex-1 rounded-md border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-300" />
+              <button type="submit" class="bg-green-200 hover:bg-green-300 text-green-900 rounded-md px-4 flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                </svg>
+              </button>
+            </div>
+            <span class="text-xs text-gray-500 text-center">Explica el contenido de forma general, propón un presupuesto y supermercado de preferencia y ¡listo!</span>
+          </form>
+        </footer>
+      </section>
+    </main>
+  </body>
+</html> 
