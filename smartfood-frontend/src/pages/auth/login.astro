@@ -1,5 +1,6 @@
 ---
 import LayoutAuth from "../../layouts/LayoutAuth.astro";
+import {SignIn,SignOut} from "auth-astro/components"
 ---
 
 <LayoutAuth 
@@ -7,12 +8,14 @@ import LayoutAuth from "../../layouts/LayoutAuth.astro";
   subtitle="Bienvenido de nuevo a SmartFood"
 >
   <div slot="social-buttons" class="flex gap-4 w-full mt-4">
+    <SignIn provider= "google">
     <button
       type="button"
       class="flex-1 bg-gray-900 text-white font-semibold rounded-md py-3 text-lg hover:bg-gray-800 transition"
     >
       Google
     </button>
+    </SignIn>
     <button
       type="button"
       class="flex-1 bg-gray-900 text-white font-semibold rounded-md py-3 text-lg hover:bg-gray-800 transition"
